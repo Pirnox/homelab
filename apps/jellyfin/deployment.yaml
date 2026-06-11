@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: jellyfin
-          image: jellyfin/jellyfin:10.11.6
+          image: jellyfin/jellyfin:latest
           ports:
             - name: http
               containerPort: 8096
