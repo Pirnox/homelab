@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: truenas-media
+  labels:
+    app.kubernetes.io/part-of: homelab
+spec:
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadOnlyMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  nfs:
+    # Adjust path to match your TrueNAS dataset path (e.g. /mnt/main/media)
+    server: 192.168.1.151
+    path: /mnt/main/media
+    readOnly: true
+  mountOptions:
+    - nfsvers=4.1
+    - hard
+    - timeo=600
+    - retrans=3
