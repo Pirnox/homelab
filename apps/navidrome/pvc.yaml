@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: navidrome-data
+  namespace: media
+  labels:
+    app.kubernetes.io/name: navidrome
+    app.kubernetes.io/part-of: homelab
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: navidrome-media
+  namespace: media
+  labels:
+    app.kubernetes.io/name: navidrome
+    app.kubernetes.io/part-of: homelab
+spec:
+  accessModes:
+    - ReadOnlyMany
+  storageClassName: ""
+  volumeName: truenas-media
+  resources:
+    requests:
+      storage: 1Ti
