@@ -28,7 +28,7 @@ spec:
               protocol: TCP
           env:
             - name: ND_MUSICFOLDER
-              value: /media/music
+              value: /media/fix
             - name: ND_DATAFOLDER
               value: /data
             - name: ND_LOGLEVEL
