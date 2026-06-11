@@ -1,20 +1,19 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: truenas-media
+  name: truenas-music
   labels:
     app.kubernetes.io/part-of: homelab
 spec:
   capacity:
-    storage: 1Ti
+    storage: 500Gi
   accessModes:
     - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: ""
   nfs:
-    # Adjust path to match your TrueNAS dataset path (e.g. /mnt/main/media)
     server: 192.168.1.151
-    path: /mnt/main/media
+    path: /mnt/SSD/ssd/Jellyfin
     readOnly: true
   mountOptions:
     - nfsvers=4.1
