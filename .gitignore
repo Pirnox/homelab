@@ -1,0 +1,47 @@
+# Claude Code context file
+CLAUDE.md
+
+# Kubernetes secrets and credentials
+*.secret.yaml
+*.secrets.yaml
+kubeconfig
+kubeconfig.yaml
+*.kubeconfig
+.kube/
+
+# Terraform / OpenTofu
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.lock.hcl
+terraform.tfvars
+*.auto.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive values and sealed secrets (raw, unencrypted)
+secrets/
+*.env
+.env
+.env.*
+
+# Helm
+charts/
+*.tgz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
