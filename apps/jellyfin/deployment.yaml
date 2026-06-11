@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: jellyfin
-          image: jellyfin/jellyfin:latest
+          image: lscr.io/linuxserver/jellyfin:latest
           ports:
             - name: http
               containerPort: 8096
@@ -29,6 +29,12 @@ spec:
           env:
             - name: JELLYFIN_PublishedServerUrl
               value: "http://192.168.1.245:30096"
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "Europe/Warsaw"
           volumeMounts:
             - name: config
               mountPath: /config
